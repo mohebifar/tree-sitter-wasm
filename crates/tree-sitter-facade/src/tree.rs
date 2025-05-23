@@ -4,7 +4,7 @@ mod native {
 
     #[derive(Clone)]
     pub struct Tree {
-        pub(crate) inner: tree_sitter::Tree,
+        pub(crate) inner: tree_sitter_native::Tree,
     }
 
     impl Tree {
@@ -35,9 +35,9 @@ mod native {
         }
     }
 
-    impl From<tree_sitter::Tree> for Tree {
+    impl From<tree_sitter_native::Tree> for Tree {
         #[inline]
-        fn from(inner: tree_sitter::Tree) -> Self {
+        fn from(inner: tree_sitter_native::Tree) -> Self {
             Self { inner }
         }
     }

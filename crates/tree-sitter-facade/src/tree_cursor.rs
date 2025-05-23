@@ -5,7 +5,7 @@ mod native {
 
     #[derive(Clone)]
     pub struct TreeCursor<'a> {
-        pub(crate) inner: tree_sitter::TreeCursor<'a>,
+        pub(crate) inner: tree_sitter_native::TreeCursor<'a>,
     }
 
     impl<'a> TreeCursor<'a> {
@@ -59,9 +59,9 @@ mod native {
         }
     }
 
-    impl<'a> From<tree_sitter::TreeCursor<'a>> for TreeCursor<'a> {
+    impl<'a> From<tree_sitter_native::TreeCursor<'a>> for TreeCursor<'a> {
         #[inline]
-        fn from(inner: tree_sitter::TreeCursor<'a>) -> Self {
+        fn from(inner: tree_sitter_native::TreeCursor<'a>) -> Self {
             Self { inner }
         }
     }

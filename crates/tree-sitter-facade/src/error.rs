@@ -2,7 +2,7 @@
 mod native {
     #[derive(Eq, PartialEq)]
     pub struct IncludedRangesError {
-        pub(crate) inner: tree_sitter::IncludedRangesError,
+        pub(crate) inner: tree_sitter_native::IncludedRangesError,
     }
 
     impl std::fmt::Debug for IncludedRangesError {
@@ -20,9 +20,9 @@ mod native {
     impl std::error::Error for IncludedRangesError {
     }
 
-    impl From<tree_sitter::IncludedRangesError> for IncludedRangesError {
+    impl From<tree_sitter_native::IncludedRangesError> for IncludedRangesError {
         #[inline]
-        fn from(inner: tree_sitter::IncludedRangesError) -> Self {
+        fn from(inner: tree_sitter_native::IncludedRangesError) -> Self {
             Self { inner }
         }
     }
@@ -35,7 +35,7 @@ mod native {
 
     #[derive(Eq, PartialEq)]
     pub struct QueryError {
-        pub(crate) inner: tree_sitter::QueryError,
+        pub(crate) inner: tree_sitter_native::QueryError,
     }
 
     impl std::fmt::Debug for QueryError {
@@ -53,9 +53,9 @@ mod native {
     impl std::error::Error for QueryError {
     }
 
-    impl From<tree_sitter::QueryError> for QueryError {
+    impl From<tree_sitter_native::QueryError> for QueryError {
         #[inline]
-        fn from(inner: tree_sitter::QueryError) -> Self {
+        fn from(inner: tree_sitter_native::QueryError) -> Self {
             Self { inner }
         }
     }
@@ -68,7 +68,7 @@ mod native {
 
     #[derive(Eq, PartialEq)]
     pub struct LanguageError {
-        pub(crate) inner: tree_sitter::LanguageError,
+        pub(crate) inner: tree_sitter_native::LanguageError,
     }
 
     impl std::fmt::Debug for LanguageError {
@@ -86,9 +86,9 @@ mod native {
     impl std::error::Error for LanguageError {
     }
 
-    impl From<tree_sitter::LanguageError> for LanguageError {
+    impl From<tree_sitter_native::LanguageError> for LanguageError {
         #[inline]
-        fn from(inner: tree_sitter::LanguageError) -> Self {
+        fn from(inner: tree_sitter_native::LanguageError) -> Self {
             Self { inner }
         }
     }

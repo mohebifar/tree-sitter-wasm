@@ -22,7 +22,7 @@ pub use range::*;
 pub use tree::*;
 pub use tree_cursor::*;
 // #[cfg(not(target_arch = "wasm32"))]
-// pub use tree_sitter::{
+// pub use tree_sitter_native::{
 //     WasmErrorKind, WasmError, WasmStore, wasmtime,
 //     wasm_engine_t, wasm_stdlib_symbols,
 // };

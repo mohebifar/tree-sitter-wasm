@@ -1,6 +1,6 @@
 [package]
 edition = "2021"
-name = "tree-sitter-facade-sg"
+name = "tree-sitter"
 version.workspace = true
 authors = ["<herringtondarkholme@users.noreply.github.com>"]
 license = "Apache-2.0 WITH LLVM-exception"
@@ -24,7 +24,7 @@ opt-level = "z"
 wasm-bindgen = "0.2"
 
 [target.'cfg(not(target_arch = "wasm32"))'.dependencies]
-tree-sitter.workspace = true
+tree-sitter-native.workspace = true
 tree-sitter-language.workspace = true
 
 [target.'cfg(target_arch = "wasm32")'.dependencies]

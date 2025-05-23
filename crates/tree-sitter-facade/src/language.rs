@@ -4,7 +4,7 @@ mod native {
 
     #[derive(Clone, Eq, PartialEq)]
     pub struct Language {
-        pub(crate) inner: tree_sitter::Language,
+        pub(crate) inner: tree_sitter_native::Language,
     }
 
     impl Language {
@@ -61,9 +61,9 @@ mod native {
         }
     }
 
-    impl From<tree_sitter::Language> for Language {
+    impl From<tree_sitter_native::Language> for Language {
         #[inline]
-        fn from(inner: tree_sitter::Language) -> Self {
+        fn from(inner: tree_sitter_native::Language) -> Self {
             Self { inner }
         }
     }
@@ -71,7 +71,7 @@ mod native {
     impl From<tree_sitter_language::LanguageFn> for Language {
         #[inline]
         fn from(inner: tree_sitter_language::LanguageFn) -> Self {
-            let inner = tree_sitter::Language::from(inner);
+            let inner = tree_sitter_native::Language::from(inner);
             Self { inner }
         }
     }

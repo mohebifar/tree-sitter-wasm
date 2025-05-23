@@ -4,7 +4,7 @@ mod native {
 
     #[derive(Clone, Eq, Hash, Ord, PartialEq, PartialOrd)]
     pub struct Point {
-        pub(crate) inner: tree_sitter::Point,
+        pub(crate) inner: tree_sitter_native::Point,
     }
 
     impl Point {
@@ -12,7 +12,7 @@ mod native {
         pub fn new(row: u32, column: u32) -> Self {
             let row = row as usize;
             let column = column as usize;
-            tree_sitter::Point { row, column }.into()
+            tree_sitter_native::Point { row, column }.into()
         }
 
         #[inline]
@@ -46,9 +46,9 @@ mod native {
         }
     }
 
-    impl From<tree_sitter::Point> for Point {
+    impl From<tree_sitter_native::Point> for Point {
         #[inline]
-        fn from(inner: tree_sitter::Point) -> Self {
+        fn from(inner: tree_sitter_native::Point) -> Self {
             Self { inner }
         }
     }

@@ -5,7 +5,7 @@ mod native {
 
     #[derive(Clone, Eq, Hash, PartialEq)]
     pub struct Range {
-        pub(crate) inner: tree_sitter::Range,
+        pub(crate) inner: tree_sitter_native::Range,
     }
 
     impl Range {
@@ -15,7 +15,7 @@ mod native {
             let end_byte = end_byte as usize;
             let start_point = start_point.inner;
             let end_point = end_point.inner;
-            tree_sitter::Range {
+            tree_sitter_native::Range {
                 start_byte,
                 end_byte,
                 start_point,
@@ -63,9 +63,9 @@ mod native {
         }
     }
 
-    impl From<tree_sitter::Range> for Range {
+    impl From<tree_sitter_native::Range> for Range {
         #[inline]
-        fn from(inner: tree_sitter::Range) -> Self {
+        fn from(inner: tree_sitter_native::Range) -> Self {
             Self { inner }
         }
     }

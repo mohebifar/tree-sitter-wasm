@@ -13,22 +13,22 @@ mod native {
     use std::convert::TryFrom;
 
     pub struct Parser {
-        inner: tree_sitter::Parser,
+        inner: tree_sitter_native::Parser,
     }
 
     impl Parser {
         #[inline]
         pub fn new() -> Result<Self, ParserError> {
-            let inner = tree_sitter::Parser::new();
+            let inner = tree_sitter_native::Parser::new();
             Ok(Self { inner })
         }
 
         // #[inline]
-        // pub fn set_wasm_store(&mut self, store: tree_sitter::WasmStore) -> Result<(), LanguageError> {
+        // pub fn set_wasm_store(&mut self, store: tree_sitter_native::WasmStore) -> Result<(), LanguageError> {
         //     self.inner.set_wasm_store(store).map_err(Into::into)
         // }
         // #[inline]
-        // pub fn take_wasm_store(&mut self) -> Option<tree_sitter::WasmStore> {
+        // pub fn take_wasm_store(&mut self) -> Option<tree_sitter_native::WasmStore> {
         //     self.inner.take_wasm_store()
         // }
 
@@ -120,9 +120,9 @@ mod native {
         }
     }
 
-    impl From<tree_sitter::Parser> for Parser {
+    impl From<tree_sitter_native::Parser> for Parser {
         #[inline]
-        fn from(inner: tree_sitter::Parser) -> Self {
+        fn from(inner: tree_sitter_native::Parser) -> Self {
             Self { inner }
         }
     }

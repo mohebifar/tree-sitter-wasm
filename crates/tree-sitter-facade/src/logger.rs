@@ -1,6 +1,6 @@
 #[cfg(not(target_arch = "wasm32"))]
 mod native {
-    pub type LogType = tree_sitter::LogType;
+    pub type LogType = tree_sitter_native::LogType;
 
     pub type Logger<'a> = Box<dyn FnMut(LogType, &str) + 'a>;
 

@@ -215,6 +215,20 @@ dependencies = [
 [[package]]
 name = "tree-sitter"
 version = "0.25.4"
+dependencies = [
+ "js-sys",
+ "tree-sitter 0.25.4 (registry+https://github.com/rust-lang/crates.io-index)",
+ "tree-sitter-language",
+ "wasm-bindgen",
+ "wasm-bindgen-futures",
+ "wasm-bindgen-test",
+ "web-sys",
+ "web-tree-sitter-sg",
+]
+
+[[package]]
+name = "tree-sitter"
+version = "0.25.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "69aff09fea9a41fb061ae6b206cb87cac1b8db07df31be3ba271fbc26760f213"
 dependencies = [
@@ -224,20 +238,6 @@ dependencies = [
  "serde_json",
  "streaming-iterator",
  "tree-sitter-language",
-]
-
-[[package]]
-name = "tree-sitter-facade-sg"
-version = "0.25.4"
-dependencies = [
- "js-sys",
- "tree-sitter",
- "tree-sitter-language",
- "wasm-bindgen",
- "wasm-bindgen-futures",
- "wasm-bindgen-test",
- "web-sys",
- "web-tree-sitter-sg",
 ]
 
 [[package]]

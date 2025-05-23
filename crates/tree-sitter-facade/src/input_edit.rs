@@ -5,7 +5,7 @@ mod native {
 
     #[derive(Clone, Eq, PartialEq)]
     pub struct InputEdit {
-        pub(crate) inner: tree_sitter::InputEdit,
+        pub(crate) inner: tree_sitter_native::InputEdit,
     }
 
     impl InputEdit {
@@ -24,7 +24,7 @@ mod native {
             let start_position = start_position.inner;
             let old_end_position = old_end_position.inner;
             let new_end_position = new_end_position.inner;
-            tree_sitter::InputEdit {
+            tree_sitter_native::InputEdit {
                 start_byte,
                 old_end_byte,
                 new_end_byte,
@@ -94,9 +94,9 @@ mod native {
         }
     }
 
-    impl From<tree_sitter::InputEdit> for InputEdit {
+    impl From<tree_sitter_native::InputEdit> for InputEdit {
         #[inline]
-        fn from(inner: tree_sitter::InputEdit) -> Self {
+        fn from(inner: tree_sitter_native::InputEdit) -> Self {
             Self { inner }
         }
     }

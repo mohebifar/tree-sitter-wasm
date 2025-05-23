@@ -5,7 +5,7 @@ mod native {
 
     #[derive(Clone, Eq, Hash, PartialEq)]
     pub struct Node<'tree> {
-        pub(crate) inner: tree_sitter::Node<'tree>,
+        pub(crate) inner: tree_sitter_native::Node<'tree>,
     }
 
     impl<'tree> Node<'tree> {
@@ -252,9 +252,9 @@ mod native {
         }
     }
 
-    impl<'tree> From<tree_sitter::Node<'tree>> for Node<'tree> {
+    impl<'tree> From<tree_sitter_native::Node<'tree>> for Node<'tree> {
         #[inline]
-        fn from(inner: tree_sitter::Node<'tree>) -> Self {
+        fn from(inner: tree_sitter_native::Node<'tree>) -> Self {
             Node { inner }
         }
     }

@@ -3,13 +3,13 @@ mod native {
     use crate::{error::QueryError, language::Language};
 
     pub struct Query {
-        pub inner: tree_sitter::Query,
+        pub inner: tree_sitter_native::Query,
     }
 
     impl Query {
         #[inline]
         pub fn new(language: &Language, source: &str) -> Result<Self, QueryError> {
-            let inner = tree_sitter::Query::new(&language.inner, source)?;
+            let inner = tree_sitter_native::Query::new(&language.inner, source)?;
             Ok(Self { inner })
         }
     }
@@ -20,9 +20,9 @@ mod native {
         }
     }
 
-    impl From<tree_sitter::Query> for Query {
+    impl From<tree_sitter_native::Query> for Query {
         #[inline]
-        fn from(inner: tree_sitter::Query) -> Self {
+        fn from(inner: tree_sitter_native::Query) -> Self {
             Self { inner }
         }
     }
